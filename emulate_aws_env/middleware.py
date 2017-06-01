@@ -25,8 +25,6 @@ class ModifyRequestMiddleware(object):
                 'Request is too large ({0}), Lambda requires <= {1}'.format(content_length, max_request_size)
             )
 
-        return self.get_response(request)
-
     def __call__(self, request):
         response = None
         if hasattr(self, 'process_request'):
